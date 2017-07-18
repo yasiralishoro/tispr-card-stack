@@ -194,8 +194,10 @@ open class TisprCardStackViewLayout: UICollectionViewLayout, UIGestureRecognizer
         let start = index - bottomStackCount
         let end = (index + 1) + topStackCount
         
-        for i in start..<end {
+        if end > start{
+            for i in start..<end {
             result.append(IndexPath(item: i, section: 0))
+            }
         }
         return result
     }
